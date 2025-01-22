@@ -6,7 +6,7 @@ Note: The current Qwen-1.5B-DataScienceTA is an early-stage model and is not yet
 ## Project Overview
 - **Objective**: Develop locally-deployable teaching assistant for data science concepts
 - **Base Model**: Qwen-2.5-Coder-1.5B-Instruct
-- **Method**: LoRA fine-tuning with knowledge distillation
+- **Method**: LoRA fine-tuning with guided data generation of larger model
 - **Target**: Teaching assistant for conceptual understanding in exam settings
 
 ## Data Pipeline
@@ -21,13 +21,14 @@ Note: The current Qwen-1.5B-DataScienceTA is an early-stage model and is not yet
   - AI/ML, Big Data, Business Statistics
   - Data Visualization, Analytics, Prescriptive Analysis
 
-### 2. **Knowledge Distillation**
-- **Teacher Model**: DeepSeek v3
+### 2. **Data Generation & Enrichment**
+- **Large Model Assistance**: DeepSeek v3
 - **Process**:
-  1. Raw text extraction
-  2. QA pair generation with Chain-of-Thought
-  3. Concept enrichment
-- **Inspired by**: AdaptLLM methodology, where text mining (summarization, word-to-text, natural language inference, common sense reasoning, paragraph detection, text completion) is used to create domain-specific corpora.
+  1. Raw text extraction from course materials
+  2. QA pair generation using DeepSeek v3
+  3. Chain-of-Thought augmentation
+  4. Concept enrichment and linking
+- **Inspired by**: AdaptLLM's approach to domain adaptation https://github.com/microsoft/LMOps/tree/main/adaptllm
 
 ### 3. **Training Format**
 ```json
@@ -42,13 +43,13 @@ Note: The current Qwen-1.5B-DataScienceTA is an early-stage model and is not yet
 ```
 
 ## Technical Implementation
-### 1. Fine-tuning Configuration
+### 1. **Fine-tuning Configuration**
 - LoRA rank: 8
 - Max sequence length: 8192
 - Trainable parameters: 0.071% (1.090M/1543.714M)
 - Training steps: 2000
 - 
-### 2. Model Variants
+### 2. **Model Variants**
 - Base Model (Qwen-2.5-Coder-1.5B-Instruct)
 - Fused Model (Qwen-1.5B-DataScienceTA)
 
@@ -91,5 +92,5 @@ mlx_lm.generate \
 ### 2. **Future Improvements**
 - Strengthen teaching constraints in training
 - Experiment with different LoRA ranks
-- Improve augmentation of raw corpora by adding both code-heavy and concept-heavy data
+- Improve augmentation of raw corpora by adding both code-heavy and concept-heavy data to develop a general-purpose model
 - Fine-tune larger models that can capture more complex data science concepts and provide more detailed explanations, which is expected to be deployed in a cloud environment rather than students' local machines.
