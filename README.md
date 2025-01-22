@@ -94,3 +94,68 @@ mlx_lm.generate \
 - Experiment with different LoRA ranks
 - Improve augmentation of raw corpora by adding both code-heavy and concept-heavy data to develop a general-purpose model
 - Fine-tune larger models that can capture more complex data science concepts and provide more detailed explanations, which is expected to be deployed in a cloud environment rather than students' local machines.
+
+# Getting Started
+
+## Prerequisites
+- Python 3.10+
+- DeepSeek API key
+- Device with Apple Scilicon chip and MLX environment
+  - FYI, I used **MacBook Pro with M3 Max chip, 64GB RAM**
+- Input documents in PDF/MD/IPYNB formats
+
+## Project Structure
+```
+DS-fine-tuning-Qwen/
+├── 
+
+CorpusRetriever.py
+
+
+├── 
+
+CorpusAugmentation_DeepSeek_async.py
+
+
+├── 
+
+TrainingDataGenerationCombined.py
+
+
+├── CorpusRepo (a folder for your documents)/
+├── CorpusProcessed
+├── CorpusAugmented/
+└── CorpusQAforTraining/
+```
+
+### Step 1: Raw Corpus Extraction
+CorpusRetriever.py 
+
+This script:
+- Processes documents using regex patterns
+- Extracts relevant text segments
+
+### Step 2: Corpus Augmentation
+CorpusAugmentation_DeepSeek_async.py
+
+This script:
+- Processes raw text using DeepSeek v3 asynchroneously with parallel API calls
+- Generates QA pairs with Chain-of-Thought
+- Enriches with related concepts
+
+### Step 3: Training Data Preparation
+TrainingDataGenerationCombined.py 
+
+This script:
+- Combines all augmented corpora
+- Formats into JSONL for MLX
+- Creates train/validation splits
+
+## Common Issues
+1. Rate limiting with DeepSeek API
+   - Solution: Adjust batch_size and delay
+2. Memory usage during processing
+   - Solution: Process in smaller batches
+3. File encoding issues
+   - Solution: Ensure UTF-8 encoding
+
