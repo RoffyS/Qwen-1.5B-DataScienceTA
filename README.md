@@ -18,8 +18,12 @@ Note: The current Qwen-1.5B-DataScienceTA is an early-stage model and is not yet
   - Jupyter notebooks
 - **Extraction**: Regex-based text mining
 - **Domains Covered**:
-  - AI/ML, Big Data, Business Statistics
-  - Data Visualization, Analytics, Prescriptive Analysis
+  - AI/ML,
+  - Big Data,
+  - Business Statistics
+  - Data Visualization,
+  - Business Analytics,
+  - Prescriptive Analytics
 
 ### 2. **Data Generation & Enrichment**
 - **Large Model Assistance**: DeepSeek v3
