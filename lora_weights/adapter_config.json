@@ -1,0 +1,29 @@
+{
+    "adapter_path": "lora_weights",
+    "batch_size": 4,
+    "config": null,
+    "data": "CorpusQAforTraining/combined",
+    "fine_tune_type": "lora",
+    "grad_checkpoint": null,
+    "iters": 2000,
+    "learning_rate": 0.0001,
+    "lora_parameters": {
+        "rank": 8,
+        "alpha": 16,
+        "dropout": 0.0,
+        "scale": 10.0
+    },
+    "lr_schedule": null,
+    "max_seq_length": 8192,
+    "model": "qwen-coder-1.5b",
+    "num_layers": 16,
+    "resume_adapter_file": null,
+    "save_every": 100,
+    "seed": 0,
+    "steps_per_eval": 50,
+    "steps_per_report": 10,
+    "test": false,
+    "test_batches": 500,
+    "train": true,
+    "val_batches": 50
+}
