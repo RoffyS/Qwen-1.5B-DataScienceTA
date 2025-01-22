@@ -48,7 +48,7 @@ Note: The current Qwen-1.5B-DataScienceTA is an early-stage model and is not yet
 - Max sequence length: 8192
 - Trainable parameters: 0.071% (1.090M/1543.714M)
 - Training steps: 2000
-- 
+
 ### 2. **Model Variants**
 - Base Model (Qwen-2.5-Coder-1.5B-Instruct)
 - Fused Model (Qwen-1.5B-DataScienceTA)
