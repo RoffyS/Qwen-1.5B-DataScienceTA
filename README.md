@@ -1,4 +1,6 @@
 # Technical Report: Low-Resource Data Science Teaching Assistant Using Qwen-1.5B
+https://huggingface.co/RoffyS/Qwen-1.5B-DataScienceTA
+
 Note: The current Qwen-1.5B-DataScienceTA is an early-stage model and is not yet ready for deployment. The model is still in the fine-tuning phase and is being tested for its performance and reliability. The dataset used for fine-tuning is not yet finalized as I am still experimenting with the teacher model and the raw corpora. Also, the corpora are not going to be open-sourced due to privacy concerns.
 
 ## Project Overview
