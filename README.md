@@ -1,12 +1,12 @@
 # Technical Report: Low-Resource Data Science Teaching Assistant Using Qwen-1.5B
 https://huggingface.co/RoffyS/Qwen-1.5B-DataScienceTA
 
-Note: The current Qwen-1.5B-DataScienceTA is an early-stage model and is not yet ready for deployment. The model is still in the fine-tuning phase and is being tested for its performance and reliability. The dataset used for fine-tuning is not yet finalized as I am still experimenting with the teacher model and the raw corpora. Also, the corpora are not going to be open-sourced due to privacy concerns.
+Note: The current Qwen-1.5B-DataScienceTA is an early-stage model and is not yet ready for deployment. The model is still in the fine-tuning phase and is being tested for its performance and reliability. The dataset used for fine-tuning has not yet been finalized as I am still experimenting with the teacher model and the raw corpora. Also, the corpora are not going to be open-sourced due to privacy concerns.
 
 ## Project Overview
 - **Objective**: Develop locally-deployable teaching assistant for data science concepts
 - **Base Model**: Qwen-2.5-Coder-1.5B-Instruct
-- **Method**: LoRA fine-tuning with guided data generation of larger model
+- **Method**: LoRA fine-tuning with guided data generation of a larger model
 - **Target**: Teaching assistant for conceptual understanding in exam settings
 
 ## Data Pipeline
@@ -81,11 +81,11 @@ mlx_lm.generate \
 
 ### 2. **Key Observations**
 - Base model maintains academic rigor with LaTeX equations
-- Finetuned model adopts teaching style with clear steps
+- Fine-tuned model adopts a teaching style with clear steps
 - Both models respect "no code" instruction
 - Finetuned model demonstrates more structured responses
 - Base model provides deeper mathematical explanations
-- Finetuned model focuses on concept accessibility
+- Fine-tuned model focuses on concept accessibility
 
 ## Recommendations
 
@@ -104,7 +104,7 @@ mlx_lm.generate \
 ## Prerequisites
 - Python 3.10+
 - DeepSeek API key
-- Device with Apple Scilicon chip and MLX environment
+- Device with Apple Silicon chip and MLX environment
   - FYI, I used **MacBook Pro with M3 Max chip, 64GB RAM**
 - Input documents in PDF/MD/IPYNB formats
 
@@ -143,7 +143,7 @@ This script:
 CorpusAugmentation_DeepSeek_async.py
 
 This script:
-- Processes raw text using DeepSeek v3 asynchroneously with parallel API calls
+- Processes raw text using DeepSeek v3 asynchronously with parallel API calls
 - Generates QA pairs with Chain-of-Thought
 - Enriches with related concepts
 
@@ -158,8 +158,8 @@ This script:
 ## Common Issues
 1. Rate limiting with DeepSeek API
    - Solution: Adjust batch_size and delay
-2. Memory usage during processing
-   - Solution: Process in smaller batches
+2. Memory usage during fine-tuning
+   - Solution: Process in smaller batches, see mlx_lm.lora documentation for recommendations
 3. File encoding issues
    - Solution: Ensure UTF-8 encoding
 
