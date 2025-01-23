@@ -43,7 +43,7 @@ class AsyncDeepSeekEnricher:
     def __init__(self, model_name: str = "default", client_id: int = 0):
         self.client = AsyncOpenAI(
             base_url="https://api.deepseek.com/v1", 
-            api_key="sk-89f0d7744ab24dfb90e55300041ab075"
+            api_key="your_api_key"
         )
         self.model = model_name
         self.client_id = client_id
