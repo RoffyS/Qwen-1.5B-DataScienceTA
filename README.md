@@ -1,7 +1,7 @@
 # Technical Report: Low-Resource Data Science Teaching Assistant Using Qwen-1.5B
 https://huggingface.co/RoffyS/Qwen-1.5B-DataScienceTA
 
-Note: The current Qwen-1.5B-DataScienceTA is an early-stage model and is not yet ready for deployment. The model is still in the fine-tuning phase and is being tested for its performance and reliability. The dataset used for fine-tuning has not yet been finalized as I am still experimenting with the optimal workflow of creating valuable QA pairs for SFT from the raw corpora. Also, the dataset is not going to be open-sourced due to privacy concerns.
+Note: The current Qwen-1.5B-DataScienceTA is an early-stage model and is not yet ready for deployment. The model is still in the fine-tuning phase and is being tested for its performance and reliability. The dataset used for fine-tuning has not yet been finalized as I am still experimenting with the optimal workflow of creating valuable QA pairs for SFT from the raw corpora. Also, the dataset is not going to be open-sourced due to privacy concerns. However, you are more than welcome to use and tweak the current pipeline for your own data, not limited to the data science domain, as it is designed to be universal. In other words, it should be a good starting point for any fine-tuning efforts using Apple Silicon devices.
 
 ## Project Overview
 - **Objective**: Develop locally-deployable teaching assistant for data science concepts
